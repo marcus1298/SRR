@@ -1677,7 +1677,6 @@
     )
   )
 
-
   (junction (at 241.3 189.23) (diameter 0) (color 0 0 0 0)
     (uuid 00fdcf0f-7c0c-4e2f-a19e-e6d0243485cb)
   )
@@ -4549,7 +4548,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x05") (at 297.18 43.18 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid c9380cc6-4b6e-48d8-9be0-bc8c792749c5)
-    (property "Reference" "ConnMCLaser3" (id 0) (at 297.18 31.75 0))
+    (property "Reference" "ConnLaser2MC" (id 0) (at 297.18 31.75 0))
     (property "Value" "Conn_01x05" (id 1) (at 297.18 34.29 0))
     (property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical" (id 2) (at 297.18 43.18 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -5354,14 +5353,14 @@
     (path "/6fea3392-8cc1-41ff-b58a-4b31a00916ea"
       (reference "ConnLaser1MC1") (unit 1) (value "Conn_01x05") (footprint "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical")
     )
+    (path "/c9380cc6-4b6e-48d8-9be0-bc8c792749c5"
+      (reference "ConnLaser2MC") (unit 1) (value "Conn_01x05") (footprint "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical")
+    )
     (path "/4253a868-8f08-4479-a46f-7ca68e6be92e"
       (reference "ConnMCLaser1") (unit 1) (value "Conn_01x05") (footprint "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical")
     )
     (path "/f406c671-4cb8-4d4d-97e3-ab926aa81c8d"
       (reference "ConnMCLaser2") (unit 1) (value "Conn_01x05") (footprint "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical")
-    )
-    (path "/c9380cc6-4b6e-48d8-9be0-bc8c792749c5"
-      (reference "ConnMCLaser3") (unit 1) (value "Conn_01x05") (footprint "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical")
     )
     (path "/04180427-de75-4b3b-9aee-00b35268037e"
       (reference "D1") (unit 1) (value "D_Zener") (footprint "Diode_SMD:D_0805_2012Metric")
