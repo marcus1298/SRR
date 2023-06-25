@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "NCP1117ST33T3G")(type "KiCad")(uri "${KIPRJMOD}/FootPrints/NCP1117ST33T3G/NCP1117ST33T3G.kicad_sym")(options "")(descr ""))
+  (lib (name "NCP1117ST50T3G")(type "KiCad")(uri "${KIPRJMOD}/FootPrints/NCP1117ST50T3G/NCP1117ST50T3G.kicad_sym")(options "")(descr ""))
+)
