@@ -1,0 +1,2 @@
+../Hw/vl53l1/vl53l1_sensor.c:25:6:ConfigAndStartSensor	32	static
+../Hw/vl53l1/vl53l1_sensor.c:74:6:GetRangingMeasurementData_Sensor	16	static

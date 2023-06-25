@@ -10,6 +10,7 @@
 #include "vl53l1_api.h"
 
 
+
 extern I2C_HandleTypeDef hi2c1;
 extern I2C_HandleTypeDef hi2c2;
 
@@ -72,13 +73,16 @@ void ConfigAndStartSensor(){
 
 void GetRangingMeasurementData_Sensor(uint16_t GPIO_Pin){
 
-	if(GPIO_Pin == GPIO_LASER1_Pin){
+	if(GPIO_Pin == LASER_1){
 		VL53L1_GetRangingMeasurementData(DevL, &data);
 		VL53L1_ClearInterruptAndStartMeasurement(DevL);
 	}
-	else{
+	else if(GPIO_Pin == LASER_1){
 		VL53L1_GetRangingMeasurementData(DevR, &data);
 		VL53L1_ClearInterruptAndStartMeasurement(DevR);
+	}
+	else{
+
 	}
 
 }
