@@ -1,0 +1,1 @@
+Hw/NHD_C0220BIZ.o: ../Hw/NHD_C0220BIZ.c
