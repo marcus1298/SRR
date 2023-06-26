@@ -8,7 +8,7 @@
 ../Hw/vl53l1/vl53l1_platform.c:151:14:VL53L1_RdWord	32	static
 ../Hw/vl53l1/vl53l1_platform.c:156:14:VL53L1_RdDWord	32	static
 ../Hw/vl53l1/vl53l1_platform.c:161:14:VL53L1_GetTickCount	24	static
-../Hw/vl53l1/vl53l1_platform.c:176:14:VL53L1_GetTimerFrequency	24	static
-../Hw/vl53l1/vl53l1_platform.c:182:14:VL53L1_WaitMs	24	static
-../Hw/vl53l1/vl53l1_platform.c:187:14:VL53L1_WaitUs	24	static
-../Hw/vl53l1/vl53l1_platform.c:192:14:VL53L1_WaitValueMaskEx	32	static
+../Hw/vl53l1/vl53l1_platform.c:169:14:VL53L1_GetTimerFrequency	24	static
+../Hw/vl53l1/vl53l1_platform.c:175:14:VL53L1_WaitMs	24	static
+../Hw/vl53l1/vl53l1_platform.c:180:14:VL53L1_WaitUs	24	static
+../Hw/vl53l1/vl53l1_platform.c:185:14:VL53L1_WaitValueMaskEx	32	static

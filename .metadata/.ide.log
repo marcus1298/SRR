@@ -884,3 +884,10 @@
 2023-06-25 20:22:57,990 [INFO] ProjectBuilder:4183 - Time for Generating toolchain IDE Files: 2388mS.
 2023-06-25 20:22:57,991 [INFO] ProjectBuilder:2785 - Time for Copy CMSIS : 1mS.
 2023-06-25 20:22:58,006 [INFO] ProjectBuilder:2785 - Time for Copy CMSIS : 0mS.
+2023-06-26 01:11:57,331 [INFO] Activator:177 - 
+
+
+2023-06-26 01:11:57,331 [INFO] Activator:178 - !SESSION log4j initialized
+2023-06-26 01:12:07,884 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2023-06-26 01:13:19,586 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Socket operation on nonsocket: configureBlocking
+2023-06-26 01:13:19,590 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
