@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "app.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -98,7 +99,7 @@ int main(void)
   MX_I2C3_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-
+  app_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,7 +107,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  app_loop();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
