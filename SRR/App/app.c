@@ -12,7 +12,8 @@
 #include "vl53l1_sensor.h"
 #include "i2c-lcd.h"
 #include "potentiometer.h"
-
+#include <stdio.h>
+#include <string.h>
 
 extern ADC_HandleTypeDef hadc1;
 
@@ -20,11 +21,15 @@ extern ADC_HandleTypeDef hadc1;
 uint32_t t1[10];                          //Buffer de tempo que foram guardados quando passaram pelo sensor 1
 uint32_t t2[10];						  //Buffer de tempo que foram guardados quando passaram pelo sensor 2
 volatile uint32_t i = 0 , j = 0;		  //Variaveis auxiliares dos buffers de tempo
-uint32_t deltat = 0;					  //Variacao de tempo
+uint32_t deltat = 1;					  //Variacao de tempo
 uint32_t count = 0;						  //Contador de objetos passados
 uint32_t typeMeasurement = 0; 			  //Seletor de unidade de medida
-uint32_t sensorDistanciaEmCm;				  //Distância entre os sensores
+uint32_t sensorDistanciaEmCm;			  //Distância entre os sensores
 volatile uint32_t start = 0;
+char contagem[20];
+char velMed[20];
+char sensorDistanciaPrint[20];
+char MeasurementUnity[20] = "";
 
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -58,10 +63,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		if(start == 1){
 
 			if(typeMeasurement == 0){						//Metros por segundos
-
+				typeMeasurement = 1;
+				strcpy(MeasurementUnity, "M/s");
 			}
 			else if (typeMeasurement == 1){					//Kilometros por hora
-
+				typeMeasurement = 0;
+				strcpy(MeasurementUnity, "Km/h");
 			}
 		}
 		else{
@@ -74,7 +81,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 }
 
 uint32_t VelocityCalculation(){
+	if(typeMeasurement == 0){
 
+		return sensorDistanciaEmCm/deltat*1000;
+	}
+	else{
+        return (sensorDistanciaEmCm/deltat*1000) * 3.6;
+	}
 
 
 }
@@ -82,7 +95,6 @@ uint32_t VelocityCalculation(){
 
 void app_init(void){
 
-	//Ler o potenciometro e salvar o valor da distancia dos sensores
 
 
 
@@ -96,6 +108,12 @@ void app_init(void){
 	while(start == 0){
 
 		sensorDistanciaEmCm = GetDistanceSensor();
+		// colcoar lcd para printar sensorDistanciaEmCm
+		lcd_clear();
+		lcd_put_cur(0, 0);
+		lcd_send_string ("D Sensores: ");
+		lcd_put_cur(0, 13);
+		sprintf(sensorDistanciaPrint, "%lu", (unsigned long)sensorDistanciaEmCm);
 	}
 	ConfigAndStartSensor();
 
@@ -103,7 +121,18 @@ void app_init(void){
 
 void app_loop(void){
 
-	//Mostrar Contagem e velocidade instantea
-
+	lcd_clear();
+	lcd_put_cur(0, 0);
+    lcd_send_string ("Count: ");
+	lcd_put_cur(0, 8);
+	sprintf(contagem, "%lu", (unsigned long)count);
+	lcd_send_string (contagem);
+	lcd_put_cur(1, 0);
+	lcd_send_string ("Vel Med: ");
+	lcd_put_cur(1, 10);
+	sprintf(velMed, "%lu", (unsigned long)VelocityCalculation());
+	lcd_send_string (velMed);
+	lcd_put_cur(1, 13);
+	lcd_send_string (MeasurementUnity);
 
 }

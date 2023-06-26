@@ -1,0 +1,14 @@
+vl53l1_platform.c:115:14:VL53L1_WriteMulti	1
+vl53l1_platform.c:121:14:VL53L1_ReadMulti	1
+vl53l1_platform.c:126:14:VL53L1_WrByte	1
+vl53l1_platform.c:131:14:VL53L1_WrWord	1
+vl53l1_platform.c:136:14:VL53L1_WrDWord	1
+vl53l1_platform.c:141:14:VL53L1_UpdateByte	1
+vl53l1_platform.c:146:14:VL53L1_RdByte	1
+vl53l1_platform.c:151:14:VL53L1_RdWord	1
+vl53l1_platform.c:156:14:VL53L1_RdDWord	1
+vl53l1_platform.c:161:14:VL53L1_GetTickCount	1
+vl53l1_platform.c:176:14:VL53L1_GetTimerFrequency	1
+vl53l1_platform.c:182:14:VL53L1_WaitMs	1
+vl53l1_platform.c:187:14:VL53L1_WaitUs	1
+vl53l1_platform.c:192:14:VL53L1_WaitValueMaskEx	1
