@@ -28,6 +28,7 @@
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o"
 "./Hw/I2C_PCF8574_LCD/i2c-lcd.o"
 "./Hw/NHD_C0220BIZ.o"
+"./Hw/Potentiometer/potentiometer.o"
 "./Hw/vl53l1/vl53l1_api.o"
 "./Hw/vl53l1/vl53l1_api_calibration.o"
 "./Hw/vl53l1/vl53l1_api_core.o"

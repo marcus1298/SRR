@@ -27,5 +27,6 @@ Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
 Hw/I2C_PCF8574_LCD \
 Hw \
+Hw/Potentiometer \
 Hw/vl53l1 \
 

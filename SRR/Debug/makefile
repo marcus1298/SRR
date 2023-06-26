@@ -10,6 +10,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Hw/vl53l1/subdir.mk
+-include Hw/Potentiometer/subdir.mk
 -include Hw/I2C_PCF8574_LCD/subdir.mk
 -include Hw/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk

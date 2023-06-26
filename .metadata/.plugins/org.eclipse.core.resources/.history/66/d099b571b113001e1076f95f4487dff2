@@ -1,0 +1,14 @@
+/*
+ * potentiometer.c
+ *
+ *  Created on: Jun 25, 2023
+ *      Author: mateu
+ */
+
+#include <stdint.h>
+#include "potentiometer.h"
+#include "main.h"
+
+uint32_t GetDistanceSensor(void){
+
+}

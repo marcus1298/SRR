@@ -11,45 +11,72 @@
 #include "main.h"
 #include "vl53l1_sensor.h"
 #include "i2c-lcd.h"
+#include "potentiometer.h"
 
 
-uint32_t v1[10];
-uint32_t v2[10];
-volatile uint32_t i = 0 , j = 0;
-uint32_t deltat = 0;
-uint32_t count = 0;
+extern ADC_HandleTypeDef hadc1;
+
+
+uint32_t t1[10];                          //Buffer de tempo que foram guardados quando passaram pelo sensor 1
+uint32_t t2[10];						  //Buffer de tempo que foram guardados quando passaram pelo sensor 2
+volatile uint32_t i = 0 , j = 0;		  //Variaveis auxiliares dos buffers de tempo
+uint32_t deltat = 0;					  //Variacao de tempo
+uint32_t count = 0;						  //Contador de objetos passados
+uint32_t typeMeasurement = 0; 			  //Seletor de unidade de medida
+uint32_t sensorDistanciaEmCm;				  //Distância entre os sensores
+volatile uint32_t start = 0;
+
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	uint32_t deltat;
 	if(GPIO_Pin == GPIO_LASER1_Pin){
 
 		if(i < 10){
-			v1[i] = HAL_GetTick();
+			t1[i] = HAL_GetTick();
 		}
 		else{
 			i = 0;
-			v1[i] = HAL_GetTick();
+			t1[i] = HAL_GetTick();
 		}
 		i++;
 
 	}
 	else if(GPIO_Pin == GPIO_LASER2_Pin){
 		if(j < 10){
-			v2[j] = HAL_GetTick();
-				}
+			t2[j] = HAL_GetTick();
+		}
 		else{
 			j = 0;
-			v2[j] = HAL_GetTick();
+			t2[j] = HAL_GetTick();
 		}
 
-		deltat = v2[j]- v1[j];
+		deltat = t2[j]- t1[j];
 		j++;
 		count ++;
 	}
-	else{
+	else if(GPIO_Pin == SWITCH_INFO_BUTTON_Pin){
+		if(start == 1){
+
+			if(typeMeasurement == 0){						//Metros por segundos
+
+			}
+			else if (typeMeasurement == 1){					//Kilometros por hora
+
+			}
+		}
+		else{
+
+			start = 1;
+		}
+
 
 	}
+}
+
+uint32_t VelocityCalculation(){
+
+
+
 }
 
 
@@ -64,6 +91,12 @@ void app_init(void){
 	//Inicializar os sensores
 	lcd_init ();
 
+	HAL_ADC_Start(&hadc1);
+
+	while(start == 0){
+
+		sensorDistanciaEmCm = GetDistanceSensor();
+	}
 	ConfigAndStartSensor();
 
 }
@@ -71,5 +104,6 @@ void app_init(void){
 void app_loop(void){
 
 	//Mostrar Contagem e velocidade instantea
+
 
 }

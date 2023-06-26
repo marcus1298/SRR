@@ -59,8 +59,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define DISTANCE_REGULATOR_Pin GPIO_PIN_0
 #define DISTANCE_REGULATOR_GPIO_Port GPIOA
-#define RESET_NHD_Pin GPIO_PIN_3
-#define RESET_NHD_GPIO_Port GPIOA
 #define SWITCH_INFO_BUTTON_Pin GPIO_PIN_4
 #define SWITCH_INFO_BUTTON_GPIO_Port GPIOA
 #define SWITCH_INFO_BUTTON_EXTI_IRQn EXTI4_IRQn
@@ -82,6 +80,8 @@ void Error_Handler(void);
 #define I2C1_SLC_LASER1_GPIO_Port GPIOB
 #define I2C1_SDA_LASER1_Pin GPIO_PIN_7
 #define I2C1_SDA_LASER1_GPIO_Port GPIOB
+#define RESET_NHD_Pin GPIO_PIN_8
+#define RESET_NHD_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
