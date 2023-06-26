@@ -1,6 +1,8 @@
-i2c-lcd.c:17:6:lcd_send_cmd	1
-i2c-lcd.c:30:6:lcd_send_data	1
-i2c-lcd.c:43:6:lcd_clear	2
-i2c-lcd.c:52:6:lcd_put_cur	3
-i2c-lcd.c:68:6:lcd_init	1
-i2c-lcd.c:94:6:lcd_send_string	2
+i2c-lcd.c:20:6:lcd_send_cmd	1
+i2c-lcd.c:33:6:lcd_send_data	1
+i2c-lcd.c:46:6:lcd_clear	2
+i2c-lcd.c:55:6:lcd_put_cur	3
+i2c-lcd.c:71:6:lcd_init	1
+i2c-lcd.c:97:6:lcd_send_string	2
+i2c-lcd.c:103:6:showSensorDistance	1
+i2c-lcd.c:114:6:showVelocityAndCount	1

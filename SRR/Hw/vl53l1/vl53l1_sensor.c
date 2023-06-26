@@ -25,7 +25,6 @@ VL53L1_DEV					   DevR = &devRight;
 void ConfigAndStartSensor(){
 
 	VL53L1_DetectionConfig_t DetectionConfig;
-	uint8_t status;
 
 	// Configurando o sensor da esquerda
 

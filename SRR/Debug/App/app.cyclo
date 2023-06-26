@@ -1,4 +1,4 @@
 app.c:35:6:HAL_GPIO_EXTI_Callback	9
 app.c:83:10:VelocityCalculation	2
 app.c:96:6:app_init	2
-app.c:122:6:app_loop	1
+app.c:112:6:app_loop	1
