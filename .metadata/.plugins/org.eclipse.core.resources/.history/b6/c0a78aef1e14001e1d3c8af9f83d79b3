@@ -24,7 +24,7 @@ volatile uint32_t i = 0 , j = 0;		  //Variaveis auxiliares dos buffers de tempo
 uint32_t deltat = 1;					  //Variacao de tempo
 uint32_t count = 0;						  //Contador de objetos passados
 uint32_t typeMeasurement = 0; 			  //Seletor de unidade de medida
-uint32_t sensorDistanceCm;			  //Distância entre os sensores
+uint32_t sensorDistanciaEmCm;			  //Distância entre os sensores
 volatile uint32_t start = 0;
 char contagem[20];
 char velMed[20];
@@ -83,10 +83,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 uint32_t VelocityCalculation(){
 	if(typeMeasurement == 0){
 
-		return sensorDistanceCm/deltat*1000;
+		return sensorDistanciaEmCm/deltat*1000;
 	}
 	else{
-        return (sensorDistanceCm/deltat*1000) * 3.6;
+        return (sensorDistanciaEmCm/deltat*1000) * 3.6;
 	}
 
 
@@ -102,8 +102,14 @@ void app_init(void){
 
 	while(start == 0){
 
-		sensorDistanceCm = GetDistanceSensor();
-		showSensorDistance(sensorDistanceCm);
+		sensorDistanciaEmCm = GetDistanceSensor();
+		// colocar lcd para printar sensorDistanciaEmCm
+		lcd_clear();
+		lcd_put_cur(0, 0);
+		lcd_send_string ("D Sensores: ");
+		lcd_put_cur(0, 13);
+		sprintf(sensorDistanciaPrint, "%lu", (unsigned long)sensorDistanciaEmCm);
+		lcd_send_string(sensorDistanciaPrint);
 	}
 	ConfigAndStartSensor();
 
@@ -111,6 +117,18 @@ void app_init(void){
 
 void app_loop(void){
 
-	showVelocityAndCount(count, VelocityCalculation(), MeasurementUnity);
+	lcd_clear();
+	lcd_put_cur(0, 0);
+    lcd_send_string ("Count: ");
+	lcd_put_cur(0, 8);
+	sprintf(contagem, "%lu", (unsigned long)count);
+	lcd_send_string (contagem);
+	lcd_put_cur(1, 0);
+	lcd_send_string ("Vel Med: ");
+	lcd_put_cur(1, 10);
+	sprintf(velMed, "%lu", (unsigned long)VelocityCalculation());
+	lcd_send_string (velMed);
+	lcd_put_cur(1, 13);
+	lcd_send_string (MeasurementUnity);
 
 }

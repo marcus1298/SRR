@@ -24,7 +24,7 @@ volatile uint32_t i = 0 , j = 0;		  //Variaveis auxiliares dos buffers de tempo
 uint32_t deltat = 1;					  //Variacao de tempo
 uint32_t count = 0;						  //Contador de objetos passados
 uint32_t typeMeasurement = 0; 			  //Seletor de unidade de medida
-uint32_t sensorDistanceCm;			  //Distância entre os sensores
+uint32_t sensorDistanciaEmCm;			  //Distância entre os sensores
 volatile uint32_t start = 0;
 char contagem[20];
 char velMed[20];
@@ -83,10 +83,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 uint32_t VelocityCalculation(){
 	if(typeMeasurement == 0){
 
-		return sensorDistanceCm/deltat*1000;
+		return sensorDistanciaEmCm/deltat*1000;
 	}
 	else{
-        return (sensorDistanceCm/deltat*1000) * 3.6;
+        return (sensorDistanciaEmCm/deltat*1000) * 3.6;
 	}
 
 
@@ -102,8 +102,8 @@ void app_init(void){
 
 	while(start == 0){
 
-		sensorDistanceCm = GetDistanceSensor();
-		showSensorDistance(sensorDistanceCm);
+		sensorDistanciaEmCm = GetDistanceSensor();
+		showSensorDistance(sensorDistanciaEmCm);
 	}
 	ConfigAndStartSensor();
 

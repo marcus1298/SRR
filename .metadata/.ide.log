@@ -891,3 +891,7 @@
 2023-06-26 01:12:07,884 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
 2023-06-26 01:13:19,586 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Socket operation on nonsocket: configureBlocking
 2023-06-26 01:13:19,590 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2023-06-26 09:10:49,797 [INFO] Activator:177 - 
+
+
+2023-06-26 09:10:49,797 [INFO] Activator:178 - !SESSION log4j initialized

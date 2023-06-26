@@ -113,8 +113,6 @@ void showSensorDistance(uint32_t sensorDistanciaEmCm){
 
 void showVelocityAndCount(uint32_t count, uint32_t velocity, char MeasurementUnity[20]){
 
-	char contagem[20];
-	char velMed[20];
 
 	lcd_clear();
 	lcd_put_cur(0, 0);

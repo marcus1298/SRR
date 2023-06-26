@@ -110,25 +110,3 @@ void showSensorDistance(uint32_t sensorDistanciaEmCm){
 	sprintf(sensorDistanciaPrint, "%lu", (unsigned long)sensorDistanciaEmCm);
 	lcd_send_string(sensorDistanciaPrint);
 }
-
-void showVelocityAndCount(uint32_t count, uint32_t velocity, char MeasurementUnity[20]){
-
-	char contagem[20];
-	char velMed[20];
-
-	lcd_clear();
-	lcd_put_cur(0, 0);
-	lcd_send_string ("Count: ");
-	lcd_put_cur(0, 8);
-	sprintf(contagem, "%lu", (unsigned long)count);
-	lcd_send_string (contagem);
-	lcd_put_cur(1, 0);
-	lcd_send_string ("Vel Med: ");
-	lcd_put_cur(1, 10);
-	sprintf(velMed, "%lu", (unsigned long)velocity);
-	lcd_send_string (velMed);
-	lcd_put_cur(1, 13);
-	lcd_send_string (MeasurementUnity);
-
-}
-

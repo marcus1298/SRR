@@ -22,9 +22,5 @@ void lcd_put_cur(int row, int col);  // put cursor at the entered position row (
 
 void lcd_clear (void);
 
-void showSensorDistance(uint32_t sensorDistanciaEmCm);
-
-void showVelocityAndCount(uint32_t count, uint32_t velocity, char MeasurementUnity[20]);
-
 #endif /* I2C_PCF8574_LCD_I2C_LCD_H_ */
 
