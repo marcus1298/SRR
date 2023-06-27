@@ -2,7 +2,7 @@
  * vl53l1_sensor.c
  *
  *  Created on: 22 de jun de 2023
- *      Author: mateu
+ *      Author: Marcus e Mateus
  */
 
 

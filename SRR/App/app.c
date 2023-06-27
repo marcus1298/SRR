@@ -2,7 +2,7 @@
  * app.c
  *
  *  Created on: 19 de jun de 2023
- *      Author: mateu
+ *      Author: Marcus e Mateus
  */
 
 
@@ -24,7 +24,7 @@ volatile uint32_t i = 0 , j = 0;		  //Variaveis auxiliares dos buffers de tempo
 uint32_t deltat = 1;					  //Variacao de tempo
 uint32_t count = 0;						  //Contador de objetos passados
 uint32_t typeMeasurement = 0; 			  //Seletor de unidade de medida
-uint32_t sensorDistanceCm;			  //Distância entre os sensores
+uint32_t sensorDistanceCm;			      //Distância entre os sensores
 volatile uint32_t start = 0;
 char contagem[20];
 char velMed[20];
@@ -33,7 +33,7 @@ char MeasurementUnity[20] = "";
 
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
+{   //Interrupcao do laser 1
 	if(GPIO_Pin == GPIO_LASER1_Pin){
 
 		if(i < 10){
@@ -46,6 +46,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		i++;
 
 	}
+	//Interrupcao do laser 2
 	else if(GPIO_Pin == GPIO_LASER2_Pin){
 		if(j < 10){
 			t2[j] = HAL_GetTick();
@@ -59,6 +60,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		j++;
 		count ++;
 	}
+	//Interrupcao do botao para ajustar a unidade de medida
 	else if(GPIO_Pin == SWITCH_INFO_BUTTON_Pin){
 		if(start == 1){
 
@@ -80,6 +82,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	}
 }
 
+//Calcula velocidade de acordo com a unidade de medida selecionada pelo usuario no botao
 uint32_t VelocityCalculation(){
 	if(typeMeasurement == 0){
 
@@ -99,7 +102,7 @@ void app_init(void){
 	lcd_init ();
 
 	HAL_ADC_Start(&hadc1);
-
+	//Trava o programa enquanto o usuario não aperta o botao para confirmar a regulagem do potenciometro(Distancia entre sensores)
 	while(start == 0){
 
 		sensorDistanceCm = GetDistanceSensor();
@@ -110,7 +113,7 @@ void app_init(void){
 }
 
 void app_loop(void){
-
+	//Mostra a quantidade de objetos que passou pelo radar, a velocidade do último objeto e a unidade de medida
 	showVelocityAndCount(count, VelocityCalculation(), MeasurementUnity);
 
 }

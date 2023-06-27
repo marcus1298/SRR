@@ -2,7 +2,7 @@
  * i2c-lcd.h
  *
  *  Created on: Jun 23, 2023
- *      Author: mateu
+ *      Author: Marcus e Mateus
  */
 
 #ifndef I2C_PCF8574_LCD_I2C_LCD_H_

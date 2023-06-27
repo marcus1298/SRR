@@ -2,7 +2,7 @@
  * i2c-lcd.c
  *
  *  Created on: Jun 23, 2023
- *      Author: mateu
+ *      Author: Author: Marcus e Mateus
  */
 
 

@@ -2,7 +2,7 @@
  * vl53l1_sensor.h
  *
  *  Created on: 22 de jun de 2023
- *      Author: mateu
+ *      Author: Marcus e Mateus
  */
 
 #ifndef VL53L1_VL53L1_SENSOR_H_
